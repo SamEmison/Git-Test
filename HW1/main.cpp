@@ -2,9 +2,9 @@
  * @file main.cpp
  * @author Sam Emison
  * @date 2024-09-25
- * @brief Vector Class Assignment
+ * @Main
  * 
- * Testing using vector class
+ * Prints and Reads a file
  */
 
 
