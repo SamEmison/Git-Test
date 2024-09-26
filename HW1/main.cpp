@@ -66,9 +66,9 @@ void populateVector(Vector& vec) {
 }
 
 int main() {
-  Vector vec;
-  Vector copyVec;
-  Vector assignedVec;
+  Vector vec; // Calls constructor, creates empty vector for vec
+  Vector copyVec; // Calls constructor, creates empty vector for the copy vector
+  Vector assignedVec; // Calls constructor, creates empty vector for the assignment operator
 
   //Populates the vector from the file
   cout << "Populating vector from Numbers.txt file..." << endl;
@@ -113,8 +113,29 @@ int main() {
   //Test 5
   //Assingnment Operator
   cout << "Testing assignment operator..." << endl;
-  assignedVec = vec; //Use Assignment operator
-  cout << "Size of assignedVec: " << assignedVec.size() << endl;
+  Vector newVec; //New vector for this test
+  for (int i = 1; i <= 5; i++) {
+    newVec.push_back(i * 10); //Pushes elements 10, 20, 30, 40, and 50
+  }
 
+  cout << "New Vector (newVec) before assignment test: " << endl;
+  cout << "Size: " << newVec.size() << endl;
+  cout << "Contents: ";
+  for (int i = 0; i < newVec.size(); i++) {
+    cout << newVec[i] << " ";
+  }
+  cout << endl;
+
+  newVec = vec; // Assignment operator
+
+
+  cout << "New Vector (newVec) after assingnment: " << endl;
+  cout << "Size: " << newVec.size() << endl;
+  cout << "First 3 elements: ";
+  for (int i = 0; i < 3 && i < newVec.size(); i++) {
+    cout << newVec[i] << " ";
+  }
+  cout << endl;
+  
   return 0;
 }

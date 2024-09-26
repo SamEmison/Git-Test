@@ -1,0 +1,33 @@
+/**
+ * @file README
+ * @author Sam Emison
+ * @date 2024-09-26
+ * @brief Vector Assignment
+ * 
+ * Creation of a data structure called Vector. Created functions and demonstrated how it works
+ */
+
+/** I ran a few tests to demonstrate that the structure worked.
+
+The first test used a priming read and read into a file called Numbers.txt with 1000+ integers. (populateVector)
+It demonstrated push_back and reserve. It took in 1001 integers with an initial capacity of 0. reserve properly made the 0 into a one and multiplied by 2 until the capacity was large enough to accomadate the size.
+
+This test could be repeated by any file that contains integers on a single line of any size. Just replace the Numbers.txt file with any numbers you want.
+
+The second test tested size() by printing only the first 30 elements.
+
+This test could be repeated with any number up to the max amount of elements given.
+
+The third test tested the copy constructor with the modifying elements function. It copied vec into copyVec and then modified the first 2 elements in vec. Then it printed out both of the first elements in each, showing that copyVec was the same as before and the modified was modified in the test.
+
+This test could be repeated and could modify any number and copy any amount of numbers.
+
+The last test was on the assignment operator. It created a newVec, pushed 5 elements(10, 20, 30, 40, 50) and printed out the contents amd size. Then it was assigned to vec and printed out again. This showcased the assignment operator assigning vec to newVec.
+
+This test could be repeated by any means. Just need 2 vecs.
+
+
+I would say my program worked well. All the tests printed out correctly and I didn't encounter any stutter or time loss. Meaning that it worked through it quickly and effeciently.
+
+All that you need to do to start it is to use the make command and then run the executable "test" as ./test
+*/
