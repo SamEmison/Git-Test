@@ -16,10 +16,10 @@
  *
  * @param const Vector& other
  * @pre
- * @post Sets vec_ptr to nullptr, and vec_size and vec_capacity to 0
+ * @post Sets vec_ptr to nullptr, and vec_size=0 and vec_capacity to 1
  *
  */
-Vector::Vector() : vec_ptr(nullptr), vec_size(0), vec_capacity(0) {
+Vector::Vector() : vec_ptr(nullptr), vec_size(0), vec_capacity(1) {
 }
 
 
@@ -33,7 +33,7 @@ Vector::Vector() : vec_ptr(nullptr), vec_size(0), vec_capacity(0) {
  * 
  */
 Vector::Vector(const Vector& other) {
-  vec_size = other.vec_size:
+  vec_size = other.vec_size;
   vec_capacity = other.vec_capacity;
   vec_ptr = new int[vec_capacity]; //Allocate New Memory
   for (int i = 0; i < vec_size; i++) {
@@ -101,7 +101,7 @@ int Vector::size() const{
  * @post Returns vec_capacity
  * 
  */
-int Vector::Capacity() const {
+int Vector::capacity() const {
   return vec_capacity; //Returns Capacity
 }
 
