@@ -44,6 +44,8 @@ void populateVector(Vector& vec) {
     return;
   }
 
+  cout << endl;
+
   //First Initial Value
   vec.push_back(temp);
 
@@ -52,12 +54,14 @@ void populateVector(Vector& vec) {
   }
 
   if (in.eof()) {
+    cout << endl;
     cout << "Data was loaded successfully." << endl;
   }
   else if (in.fail()) {
     cout << "Error reading file V2." << endl; //V2 is for me if it fails I can catch where it fails exactly
   }
 
+  
   in.close(); //Closes the file
 }
 
@@ -70,7 +74,11 @@ int main() {
   cout << "Populating vector from Numbers.txt file..." << endl;
   populateVector(vec);
   cout << "Finished populating vector." << endl;
+  
+  cout << endl;
+  
   cout << "Vector size after file population: " << vec.size() << endl;
+  cout << endl; 
 
   //Test 2
   //Test size() and print first 30 elements
@@ -79,21 +87,29 @@ int main() {
     cout << vec[i] << " ";
   }
   cout << endl; //New line
+  cout << endl;
 
   //Test 3
+  //Copy constructor
+  cout << "Testing the copy constructor..." << endl;
+  cout << "Copying vec into copyVec..." << endl;
+  copyVec = vec; //Copy constructor
+  cout << endl;
+
+  //Test 4
   //Modifying elements with bracket operator[]
   cout << "Modifying the first 2 elements..." << endl;
   vec[0] = 1234; //Modifies first element
   vec[1] = 4321; //Modifies second element
   cout << "The first 2 modified elements: " << vec[0] << " " << vec[1] << endl;
+  cout << endl;
 
-  //Test 4
-  //Copy constructor
-  cout << "Testing the copy constructor..." << endl;
-  copyVec = vec; //Copy constructor
+  //Copy Constructer Cont.
   cout << "Size of copyVec: " << copyVec.size() << endl;
   cout << "The first element of copyVec: " << copyVec[0] << endl;
-
+  cout << "The first element of vec: " << vec[0] << endl;
+  cout << endl;
+  
   //Test 5
   //Assingnment Operator
   cout << "Testing assignment operator..." << endl;

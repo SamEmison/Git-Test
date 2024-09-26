@@ -9,6 +9,7 @@
 #include "Vector.h"
 #include <iostream>
 
+using namespace std;
 
 //Constructor
 /**
@@ -16,10 +17,10 @@
  *
  * @param const Vector& other
  * @pre
- * @post Sets vec_ptr to nullptr, and vec_size=0 and vec_capacity to 1
+ * @post Sets vec_ptr to nullptr, and vec_size=0 and vec_capacity to 0
  *
  */
-Vector::Vector() : vec_ptr(nullptr), vec_size(0), vec_capacity(1) {
+Vector::Vector() : vec_ptr(nullptr), vec_size(0), vec_capacity(0) {
 }
 
 
@@ -116,8 +117,11 @@ int Vector::capacity() const {
  * 
  */
 void Vector::push_back(int element) {
-  if (vec_size >= vec_capacity) {
-    reserve(vec_capacity * 2); //Doubles Capacity
+  if (vec_size >= vec_capacity) { //Loop that ensures vec_capacity can contain the size
+    //If capacity is 0, start with at least 1. If vec_size is greater than the capacity. Multiply by 2
+    int new_capacity = vec_capacity == 0 ? 1 : vec_capacity * 2;
+    reserve(new_capacity); //Reserves new capacity
+    cout << "Increasing Vector Capacity... New Vector Capacity: " << vec_capacity << endl;
   }
   vec_ptr[vec_size++] = element; //Adds the New Element
 }
