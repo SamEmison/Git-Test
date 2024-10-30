@@ -14,7 +14,7 @@ class Phonebook {
     Entry* next; //Pointer for the next node in the list
 
     //Constructor for initilizing an Entry node
-    Entry(const std::string& fname, const std::string& lname, const string& phone, Entry* nxt = nullptr)
+    Entry(const std::string& fname, const std::string& lname, const std::string& phone, Entry* nxt = nullptr)
       : first_name(fname), last_name(lname), phone_number(phone), next(nxt) {}
   };
 

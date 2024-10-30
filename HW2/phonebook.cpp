@@ -40,7 +40,7 @@ void Phonebook::push_back(const std::string &first_name, const std::string &last
 }
 
 
-void Phonebook::insert_sorted(const std::string &first_name, const std::string &last_name, const std::string phone_number); {
+void Phonebook::insert_sorted(const std::string &first_name, const std::string &last_name, const std::string phone_number) {
   Entry* new_entry = new Entry(first_name, last_name, phone_number);
 
   //If the list is empty, the new entry should be at the head
@@ -92,7 +92,7 @@ bool Phonebook::delete_user(const std::string &name) {
   //Check if head is the entry to delete
   std::string head_full_name = head->first_name + " " + head->last_name;
   if (head_full_name == name) {
-    Entry* temp == head;
+    Entry* temp = head;
     head = head->next;
     delete temp;
     return true; //Successfully deleted
@@ -132,21 +132,29 @@ bool Phonebook::write_to_file(const std::string &filename) const {
 }
 
 //Read the phonebook from txt file
-bool Phonebook::read_from_file(const std::string &filename) {
-  std::ifstream infile(filename);
-  if (!infile.is_open()) {
+bool Phonebook::read_from_file(const std::string& filename) {
+  std::ifstream file(filename);
+  if (!file.is_open()) {
+    std::cerr << "Failed to open file." << std::endl;
     return false; //Return false, file couldnt be opened
   }
 
   std::string first_name, last_name, phone_number;
-  while (infile >> first_name >> last_name) {
-      //Read the phone number from the next line
-      if (!std::getline(infile, phone_number)) {
-	return false; // Return false is reading phone number fails
-      }
+  while (std::getline(file, first_name, ' ') && std::getline(file, last_name)) {
+    std::getline(file, phone_number);	 
       //Insert the new entry in the order
-      inserted_sorted(first_name, last_name, phone_number);
+    insert_sorted(first_name, last_name, phone_number);  
     }
-    infile.close();
+  
+    file.close();
     return true; //Successfully read from the file
+}
+
+void Phonebook::print() const {
+  Entry* current = head;
+  while (current != nullptr) {
+    std::cout << current->first_name << " " << current->last_name << "\n";
+    std::cout << current->phone_number << "\n";
+    current = current->next;
+  }
 }
