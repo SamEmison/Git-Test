@@ -1,3 +1,13 @@
+/**
+ * @file phonebook.cpp
+ * @author Sam Emison
+ * @date 2024-10-29
+ * @brief Functionality for the phonebook class
+ * 
+ * Adds the functionalities needed for the phonebook class
+ */
+
+
 #include "phonebook.h"
 #include <iostream>
 #include <fstream>

@@ -1,3 +1,13 @@
+/**
+ * @file main.cpp
+ * @author Sam Emison
+ * @date 2024-10-29
+ * @brief The main
+ * 
+ * Runs the functions and provides the user a display to interact with
+ */
+
+
 #include <iostream>
 #include <string>
 #include "phonebook.h"
@@ -27,7 +37,7 @@ do {
   cin.ignore(); // To ignore the newline character from the input buffer
   
   switch (choice) {
-  case 1: {
+  case 1: { //Reads file 
     string filename;
     cout << "Enter the filename to read from: ";
     getline(cin, filename);
@@ -39,7 +49,7 @@ do {
     }
     break;
   }
-  case 2: {
+  case 2: { //Writes to file
     string filename;
     cout << "Enter the filename to write to: ";
     getline(cin, filename);
@@ -51,10 +61,10 @@ do {
     }
     break;
   }
-  case 3:
+  case 3: //Prints the phonebook
     phonebook.print();
     break;
-  case 4: {
+  case 4: { //Looks up a user based off phone number and return name
     string full_name;
     cout << "Enter the full name (first last) to search for: ";
     getline(cin, full_name);
@@ -67,7 +77,7 @@ do {
     }
     break;
   }
-  case 5: {
+  case 5: {//Looks up a user based off name and returns phone number
     string phone_number;
     cout << "Enter the phone number to reverse lookup: ";
     getline(cin, phone_number);
@@ -80,7 +90,7 @@ do {
     }
     break;
   }
-  case 6: {
+  case 6: { //Add a user
     string first_name, last_name, phone_number;
     cout << "Enter the first name: ";
     getline(cin, first_name);
@@ -92,7 +102,7 @@ do {
     cout << "User added successfully.\n";
     break;
   }
-  case 7: {
+  case 7: {//Delete a user
     string full_name;
     cout << "Enter the full name (first last) of the user to delete: ";
     getline(cin, full_name);
@@ -104,7 +114,7 @@ do {
     }
     break;
   }
-  case 8:
+  case 8: //Exits the program
     cout << "Exiting the program. Goodbye!\n";
     break;
   default:
