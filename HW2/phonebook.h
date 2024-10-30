@@ -1,10 +1,27 @@
-// phonebook.h
+/**
+ * @file phonebook.h
+ * @author Sam Emison
+ * @date 2024-10-30
+ * @brief Sets up structure
+ * 
+ * Sets up structure for the phonebook class by defining its members and operations
+ */
 
+
+// phonebook.h
 #ifndef PHONEBOOK_H
 #define PHONEBOOK_H
 
 #include <string>
 
+
+/**
+ * Establishes the class Phonebook and its variables/prototypes and whether they are public/private
+ *
+ * @class Phonebook phonebook.h "HW2/phonebook.h"
+ * @brief Sets up the structure  
+ *
+ */
 class Phonebook {
  private:
   struct Entry {
