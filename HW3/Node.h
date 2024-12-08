@@ -4,23 +4,32 @@
 #include <string>
 using namespace std;
 
+/**
+ * The Node class represents a node in the binary search tree.
+ * Each node stores a key, data, and pointers to its left and right children.
+ */
 class Node {
+private:
+    string key;    // Key used for sorting and searching
+    int data;      // Data associated with the key
+    Node* left;    // Pointer to the left child
+    Node* right;   // Pointer to the right child
+
 public:
-    Node(string key, int data);
+    // Constructor to initialize a Node with a key and data
+    Node(const string& key, int data);
+
+    // Destructor
+    ~Node();
+
+    // Getters and Setters
     string getKey() const;
     int getData() const;
-    void setData(int data);
     Node* getLeft() const;
     Node* getRight() const;
-    void setLeft(Node* left);
-    void setRight(Node* right);
-    Node* left;
-    Node* right;
-
-  
-private:
-    string key;
-    int data;
+    void setData(int data);
+    void setLeft(Node* leftNode);
+    void setRight(Node* rightNode);
 };
 
 #endif
