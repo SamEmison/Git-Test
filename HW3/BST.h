@@ -1,3 +1,12 @@
+/**
+ * @file BST.h
+ * @author Sam Emison
+ * @date 2024-12-08
+ * @brief class file for bst
+ * includes the mehtods
+ * 
+ */
+
 #ifndef BST_H
 #define BST_H
 
@@ -7,6 +16,14 @@
 
 /**
  * The bst class represents a binary search tree where each node contains a key-value pair.
+ */
+
+/**
+ * Class for the bst
+ *
+ * @class bst BST.h "HW3/BST.h"
+ * @brief 
+ *
  */
 class bst {
 private:

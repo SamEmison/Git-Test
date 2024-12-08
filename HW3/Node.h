@@ -1,3 +1,12 @@
+/**
+ * @file Node.h
+ * @author Sam Emison
+ * @date 2024-12-08
+ * @brief Class file for node data
+ * 
+ * Methods for the node data
+ */
+
 #ifndef NODE_H
 #define NODE_H
 

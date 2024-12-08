@@ -1,3 +1,12 @@
+/**
+ * @file Driver.cpp
+ * @author Sam Emison
+ * @date 2024-12-08
+ * @brief main
+ * 
+ * Acts as interface to interact with
+ */
+
 #include "BST.h"
 #include <iostream>
 #include <fstream>
