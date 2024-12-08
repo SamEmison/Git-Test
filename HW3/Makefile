@@ -1,9 +1,9 @@
 CC = g++ # The compiler
-TARGET = driver # The executable name
+TARGET = test # The executable name
 CFLAGS = -c -Wall -Wextra -g # Compile with all errors and warnings
 
 # Object Files
-OBJS = driver.o Node.o BinarySearchTree.o
+OBJS = Driver.o Node.o BST.o
 
 all: $(TARGET)
 
@@ -12,16 +12,16 @@ $(TARGET): $(OBJS)
 	$(CC) $(OBJS) -o $(TARGET)
 
 # Compiles driver.o from source
-driver.o: driver.cpp BinarySearchTree.h Node.h
-	$(CC) $(CFLAGS) driver.cpp -o driver.o
+Driver.o: Driver.cpp BST.h Node.h
+	$(CC) $(CFLAGS) Driver.cpp -o Driver.o
 
 # Compiles Node.o from source
 Node.o: Node.cpp Node.h
 	$(CC) $(CFLAGS) Node.cpp -o Node.o
 
-# Compiles BinarySearchTree.o from source
-BinarySearchTree.o: BinarySearchTree.cpp BinarySearchTree.h Node.h
-	$(CC) $(CFLAGS) BinarySearchTree.cpp -o BinarySearchTree.o
+# Compiles BST.o from source
+BST.o: BST.cpp BST.h Node.h
+	$(CC) $(CFLAGS) BST.cpp -o BST.o
 
 clean: # Cleans everything up
 	rm -f *.o *~ $(TARGET)

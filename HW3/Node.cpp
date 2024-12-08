@@ -1,50 +1,36 @@
-/**
- * @file Node.cpp
- * @author Sam Emison
- * @date 2024-12-07
- * @brief Node functionality 
- * 
- * Provides functionality for the Node class
- */
+#include "Node.h"
 
-#include "Node.h";
-#include <iostream>
-
-using namespace std;
-
-Node::Node(const string& key, int data) {
-  this->key = key;
-  this->data = data;
-  left = nullptr;
-  right = nullptr;
+Node::Node(string key, int data) {
+    this->key = key;
+    this->data = data;
+    left = nullptr;
+    right = nullptr;
 }
 
-Node::~Node() {}
-
-string Node::getKey() {
-  return key;
+string Node::getKey() const {
+    return key;
 }
 
-int Node::getData() {
-  return data;
-}
-
-Node* Node::getLeft() {
-  return left;
-}
-
-Node* Node::getRight() {
-  return right;
+int Node::getData() const {
+    return data;
 }
 
 void Node::setData(int data) {
-  this->data = data;
+    this->data = data;
 }
 
-void Node::setLeft(Node* leftNode) {
-  left = leftNode;
+Node* Node::getLeft() const {
+    return left;
 }
 
-void Node::setRight(Node* rightNode) {
-  right = rightNode;
+Node* Node::getRight() const {
+    return right;
+}
+
+void Node::setLeft(Node* left) {
+    this->left = left;
+}
+
+void Node::setRight(Node* right) {
+    this->right = right;
 }

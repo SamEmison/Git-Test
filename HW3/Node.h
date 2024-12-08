@@ -2,26 +2,25 @@
 #define NODE_H
 
 #include <string>
-
 using namespace std;
 
-class Node{
-private:
-  string key;
-  int data;
-  Node* left;
-  Node* right;
-
+class Node {
 public:
-  Node(const string&key, int data);
-  ~Node();
-  string getKey();
-  int getData();
-  Node* getleft();
-  Node* getRight();
-  void setData(int data);
-  void setLeft(Node* leftNode);
-  void setRight(Node* rightNode);
+    Node(string key, int data);
+    string getKey() const;
+    int getData() const;
+    void setData(int data);
+    Node* getLeft() const;
+    Node* getRight() const;
+    void setLeft(Node* left);
+    void setRight(Node* right);
+    Node* left;
+    Node* right;
+
+  
+private:
+    string key;
+    int data;
 };
 
 #endif
