@@ -1,3 +1,12 @@
+#/**
+# * @file Makefile
+# * @author Sam Emison
+# * @date 2024-12-08
+# * @brief Makefile
+# * 
+#* 
+# */
+
 CC = g++ # The compiler
 TARGET = test # The executable name
 CFLAGS = -c -Wall -Wextra -g # Compile with all errors and warnings
