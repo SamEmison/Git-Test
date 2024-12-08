@@ -1,0 +1,79 @@
+/**
+ * @file main.cpp
+ * @author Sam Emison
+ * @date 2024-09-12
+ * @brief Sentinal Loop with Averaging Capabilities
+ * 
+ * Sentinal loop takes in array and Averages the numbers and prints them out
+ */
+
+
+#include <iostream>
+#include <fstream>
+
+using namespace std;
+
+//Constant Variable MAX_ARRAY
+const int MAX_ARRAY=1000;
+
+void populateArray(int arr[], int& size) {
+  ifstream inputFile("integers.txt"); //Opens file
+
+  if (!inputFile) {
+    cout << "Error opening file!" << endl; //Wont return garbage if file doesn't open
+    size = 0; //No size = No read
+    return;
+  }
+
+  int number; //Number Value Data
+  size = 0;
+
+  while(inputFile >> number) {
+    if (size < MAX_ARRAY) {//Checks for room
+      arr[size++] = number; //Add number to array and +1 to size
+    }
+    else {
+#include <iostream>
+#include <fstream>
+
+using namespace std;
+
+//Constant Variable MAX_ARRAY
+const int MAX_ARRAY=1000;
+
+void populateArray(int arr[], int& size) {
+  ifstream inputFile("integers.txt"); //Opens file
+
+  if (!inputFile) {
+    cout << "Error opening file!" << endl; //Wont return garbage if file doesn't open
+    size = 0; //No size = No read
+    return;
+  }
+                                                                                                                              cout << "Array is full. Too much data." << endl;
+      break;
+    }
+  }
+
+  if (inputFile.eof()) { //Looks to find the end of file
+    cout << "End of file." << endl;
+  }
+  else {
+    cout << "Error reading file" << endl;
+  }
+
+  inputFile.close(); //Closes the file
+}
+
+int main() {
+  int integers[MAX_ARRAY]; //Array of integers with a parameter of MAX_ARRAY
+  int size; //Number of integers read
+
+  populateArray(integers,size); //Populates the array with numbers
+
+  for (int i =0; i < size; ++i) { //Test print for my sake
+    cout << integers[i] << " ";
+  }
+  cout << endl;
+  
+  return 0;
+}
